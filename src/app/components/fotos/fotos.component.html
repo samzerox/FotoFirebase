@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="card-columns">
+        <div class="card" *ngFor="let imagen of imagenes | async">
+            <img [src]="imagen.url" class="card-img-top img-fluid">
+            <div class="card-block">
+                <h4 class="card-title">
+                    {{imagen.nombre}}
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- usamos async por que imagenes es un objeto de FirebaseListObservable y es necesario primero
+tener la respuesta de firebase(tambien hay que usarlo en el ngFor) -->
+<!-- <pre>
+    {{ (imagenes | async ) | json}}
+</pre> -->
